@@ -53,6 +53,10 @@ table {
 .container {
 }
 
+a{
+    text-decoration: none;
+}
+
 .titleBox{
     z-index: 1;
     position: fixed;
@@ -60,10 +64,9 @@ table {
     justify-items: center;
     justify-self: center;
     margin-top: 60px;
-    width: 900px;
+    width: 600px;
     height: 80px;  
-    background: #ff9900;
-    border: 3px solid #000000;
+    background: #0086FF;
     border-radius: 25px;
 }
 
@@ -73,25 +76,6 @@ table {
     letter-spacing: 0px;
     color: #ffffff;
     margin-top: -15px;
-}
-
-.userButton{
-    z-index: 1;
-    position: fixed;
-    display: grid;
-    justify-items: center;
-    justify-self:end;
-    margin-top: 80px;
-    margin-right: 100px;
-    width: 190px;
-    height: 60px;
-    font: normal normal 800 40px/56px Arial;
-    font-size: 2rem;
-    letter-spacing: 0px;
-    color: #ffffff;
-    background: #ff9900;
-    border: 3px solid #000000;
-    border-radius: 25px;
 }
 
 .backButton{
@@ -108,11 +92,16 @@ table {
     font-size: 2rem;
     letter-spacing: 0px;
     color: #ffffff;
-    background: #ff9900;
-    border: 3px solid #000000;
+    background: #FF69B4;
     border-radius: 25px;
 }
 
-.title a{
-    text-decoration: none;
+input{
+    display: grid;
+    justify-self: center;
+    margin-top: 30px;
+    width: 400px;
+    height: 50px;
+    font-size: 2rem;
+    border-radius: 10px;
 }
