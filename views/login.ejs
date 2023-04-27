@@ -1,25 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
-
-    <!-- js -->
-    <script src="/js/app.js"></script>
-
-</head>
-<body>
+<%- include('partials/header'); -%>
     
 
     <div class="title">
         <div class="titleBox"><h1>Log in</h1></div>
 
-        <a href="/index.html"><div class="backButton">Back</div></a>
+        <a href="/"><div class="backButton">Back</div></a>
 
     </div>
     
@@ -27,11 +12,15 @@
 
 
     <div class="inputField">
-<h1>Username:</h1>
-<input type="text" placeholder="Type here...">
+        <h1>Username:</h1>
+        <input type="text" placeholder="Type here...">
 
-<h1>Password:</h1>
-<input type="text" placeholder="Type here...">
-</div>
-</body>
-</html>
+        <h1>Password:</h1>
+        <input type="text" placeholder="Type here...">
+    </div>
+
+    
+  <a href="/"><div class="logInButton">"Log in"</div></a>
+
+
+<%- include('partials/footer'); -%>

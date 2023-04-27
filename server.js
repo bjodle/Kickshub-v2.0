@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require('express');
 const mongoose = require('mongoose');
-const Routes = require("./routes/Routes"); //importing the routes so our app actually uses them
+const Routes = require("./routes/routes"); //importing the routes so our app actually uses them
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 
 const dbURI = process.env.host
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
-  .then((result) => app.listen(3003))
+  .then((result) => app.listen(80))
   .then(console.log("SERVER ONLINE"))
   .catch((err) => console.log(err));
 
@@ -22,22 +22,19 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
 app.use(Routes);
 
 
-const winnie = 
+const cult = 
 `
-⣿⣿⣿⣿⣿⠟⠋⠄⠄⠄⠄⠄⠄⠄⢁⠈⢻⢿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⡀⠭⢿⣿⣿⣿⣿
-⣿⣿⣿⣿⡟⠄⢀⣾⣿⣿⣿⣷⣶⣿⣷⣶⣶⡆⠄⠄⠄⣿⣿⣿⣿
-⣿⣿⣿⣿⡇⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠄⠄⢸⣿⣿⣿⣿
-⣿⣿⣿⣿⣇⣼⣿⣿⠿⠶⠙⣿⡟⠡⣴⣿⣽⣿⣧⠄⢸⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣾⣿⣿⣟⣭⣾⣿⣷⣶⣶⣴⣶⣿⣿⢄⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⡟⣩⣿⣿⣿⡏⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣹⡋⠘⠷⣦⣀⣠⡶⠁⠈⠁⠄⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣍⠃⣴⣶⡔⠒⠄⣠⢀⠄⠄⠄⡨⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣦⡘⠿⣷⣿⠿⠟⠃⠄⠄⣠⡇⠈⠻⣿⣿⣿⣿
-⣿⣿⣿⣿⡿⠟⠋⢁⣷⣠⠄⠄⠄⠄⣀⣠⣾⡟⠄⠄⠄⠄⠉⠙⠻
-⡿⠟⠋⠁⠄⠄⠄⢸⣿⣿⡯⢓⣴⣾⣿⣿⡟⠄⠄⠄⠄⠄⠄⠄⠄
-⠄⠄⠄⠄⠄⠄⠄⣿⡟⣷⠄⠹⣿⣿⣿⡿⠁⠄⠄⠄⠄⠄⠄⠄⠄
-⠄⠄⠄⠄⠄⠄⣸⣿⡷⡇⠄⣴⣾⣿⣿⠃⠄⠄⠄⠄⠄⠄⠄⠄⠄
-⠄⠄⠄⠄⠄⠄⣿⣿⠃⣦⣄⣿⣿⣿⠇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄
-⠄⠄⠄⠄⠄⢸⣿⠗⢈⡶⣷⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄`
-console.log(winnie)
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀  ⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣦⡄⢠⣴⣿⣧⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠟⢛⡛⠻⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀  ⠖⢢⣿⣿⣦⣬⣧⣶⣿⣿⡴⠲⠀⠀⠀⠀
+⠀⠀⠀⠀ ⢸⣭⣽⠛⠻⠉⠀⢹⠟⠛⠻⣯⡭⡇⠀⠀⠀⠀
+⠀⠀⠀ ⡡⠚⢉⣁⣠⡄⠀⠀⠀⠀⣤⣀⣉⠉⠓⢄⠀⠀⠀
+⠀⠀ ⢠⠁⣴⠋⠀⠘⢧⡴⠷⣤⡴⠃⠀⠈⠳⠀⠈⡆⠀⠀
+⠀⠀⠀⣠⢆⣿⣾⣿⣿⠻⣄⠀⢀⣴⣿⣿⡟⢶⣄⠰⣅
+ ⣥⠚⡿⡞⣾⣿⣭⣭⠅⣧⠀⢸⣿⣯⣭⡅⢨⢽⡄⢻⠓⢬
+⠀⠳⣄⣧⢳⣘⠻⠿⠿⠔⠑⠶⠀⠻⠿⠿⠵⠋⡸⠃⣸⣠⠞⠀
+⠀⠀ ⠈⠢⢍⣓⠒⠒⠒⠒⠒⠒⠂⠐⠒⠒⣋⡠⠔⠁⠀⠀
+⠀⠀⠀⠀  ⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀`
+console.log(cult)

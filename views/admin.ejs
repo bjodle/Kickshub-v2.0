@@ -1,0 +1,73 @@
+
+<%- include('partials/header'); -%>
+
+<div class="title">
+    <div class="titleBox"><h1>Create a Shoe</h1></div>
+    <a href="/"><div class="backButton">Back</div></a>
+</div>
+
+<div class="topPush"></div>
+
+<img class="placeholder" src="/img/stockphoto.jpg" alt="placeholder image">
+
+<div class="form-cont">
+    <form>
+      <label for="TITTEL">Title</label>
+      <input type="text" name="TITTEL" placeholder="Type here...">
+      <label for="MODELL">Model</label>
+      <input type="text" name="MODELL" placeholder="Type here...">
+      <label for="MERKE">Brand</label>
+      <input type="text" name="MERKE" placeholder="Type here...">
+      <label for="PRIS">Price</label>
+      <input type="number" name="PRIS" placeholder="Type here...">
+      <label for="ARTIKKELNUMMER">Article Number</label>
+      <input type="text" name="ARTIKKELNUMMER" placeholder="Type here...">
+      <button id="formsubmit" type="button">Legg til produkt</button>
+    </form>
+  </div>
+
+  
+  <a href="/"><div class="homeButton">Home</div></a>
+
+
+  <script>
+    const form = document.querySelector("form");
+    const formButton = document.querySelector("#formsubmit");
+
+
+    formButton.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      //form values
+      const TITTEL = form.TITTEL.value
+      const MODELL = form.MODELL.value
+      const MERKE = form.MERKE.value
+      const PRIS = form.PRIS.value
+      const ARTIKKELNUMMER = form.ARTIKKELNUMMER.value
+
+
+
+     try {
+           //sender data som lager sko
+           const res = await fetch('/shoe',{
+               method: 'post',
+               body: JSON.stringify({title: TITTEL, model: MODELL, brand: MERKE, price: PRIS, articleNumber: ARTIKKELNUMMER}),
+                headers: {'Content-Type': 'application/json'}
+            })
+            const shoe = await res.json();
+
+            console.log(shoe);
+
+            if (shoe.shoes){ //if shoe data has been posted
+                location.assign("/"); //send them to adminpage
+            }
+
+        } catch (err) {
+            console.log(err)
+        }
+
+    })
+  </script>
+
+
+<%- include('partials/footer'); -%>

@@ -1,29 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KicksHub</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/styles.css">
+<%- include('partials/header'); -%>
 
-    <!-- JS -->
-    <script src="/js/app.js"></script>
-</head>
-
-
-
-<body>
-
+    <script type="module" src="/js/mongo.js"></script>
 
     <div class="title">
         <div class="titleBox"><h1>KicksHub</h1></div>
-        <a href="/html/login.html"><div class="userButton">Log in</div></a>
+
+        <a href="/login"><div class="userButton">Log in</div></a>
+
+        <a href="/admin"><div class="addButton">Add</div></a>
     </div>
     
     <div class="topPush"></div>
 
-</body>
-</html>
+    <div class="shoes">
+        <%if(productresult.length > 0){%>
+            <%productresult.forEach(shoe => {%>
+                <img src="img/stockphoto.jpg" alt="">
+              <div class="product-cont">
+                <h3><%=shoe.title%></h3>
+                <p><b>MODELL:</b> <%=shoe.model%></p>
+                <p><b>MERKE:</b> <%=shoe.brand%></p>
+                <p><b>PRIS:</b> <%=shoe.price%>kr</p>
+                <p><b>ARTIKKELNUMMER:</b> <%=shoe.articleNumber%></p>
+              </div>
+              
+                <form action="/update/:id" method="post">
+                    <button type='submit' class="updateButton">Update</button>
+                </form>
+
+
+                <form action="/delete/:id" method="post">
+                    <button type='submit' class="deleteButton">Delete</button>
+                </form>
+
+            <%})%>
+               
+          <%}%>
+    </div>
+
+
+<%- include('partials/footer'); -%>

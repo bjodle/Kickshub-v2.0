@@ -25,42 +25,49 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+
 body {
 	line-height: 1;
     background-image: url(/img/shoe-background.png);
     background-size: cover;
 }
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
 
-.title {
-    
+a{
+    text-decoration: none;
 }
 
+
+/* TITLE */
+
 .topPush{
-    margin-top: 300px;
+    margin-top: 100px;
 }
 
 .titleBox{
-    z-index: 1;
-    position: fixed;
     display: grid;
     justify-items: center;
     justify-self: center;
-    margin-top: 60px;
+    margin-top: 100px;
     width: 600px;
     height: 80px;  
     background: #0086FF;
@@ -75,13 +82,13 @@ table {
     margin-top: -15px;
 }
 
+
+/* TOP BUTTONS */
+
 .userButton{
-    z-index: 1;
-    position: fixed;
     display: grid;
     justify-items: center;
     justify-self:end;
-    margin-top: 80px;
     margin-right: 100px;
     width: 190px;
     height: 60px;
@@ -91,15 +98,38 @@ table {
     color: #ffffff;
     background: #FF69B4;
     border-radius: 25px;
+    transition: transform .2s; /* Animation */
 }
 
-.backButton{
-    z-index: 1;
-    position: fixed;
+.userButton:hover{
+    transform: scale(1.05);
+}
+
+.addButton{
     display: grid;
     justify-items: center;
     justify-self: start;
-    margin-top: 80px;
+    margin-top: -60px;
+    margin-left: 100px;
+    width: 190px;
+    height: 60px;
+    font: normal normal 800 40px/56px Arial;
+    font-size: 2rem;
+    letter-spacing: 0px;
+    color: #ffffff;
+    background: #FFAB11;
+    border-radius: 25px;
+    transition: transform .2s; /* Animation */
+}
+
+.addButton:hover{
+    transform: scale(1.05);
+}
+
+.backButton{
+    display: grid;
+    justify-items: center;
+    justify-self: start;
     margin-left: 100px;
     width: 190px;
     height: 60px;
@@ -109,11 +139,68 @@ table {
     color: #ffffff;
     background: #FF69B4;
     border-radius: 25px;
+    transition: transform .2s; /* Animation */
 }
 
-a{
-    text-decoration: none;
+.backButton:hover{
+    transform: scale(1.05);
 }
+
+.homeButton{
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 20px;
+    margin-bottom: 250px;
+    width: 190px;
+    height: 60px;
+    font: normal normal 800 40px/56px Arial;
+    font-size: 2rem;
+    letter-spacing: 0px;
+    color: #ffffff;
+    background: #FF69B4;
+    border-radius: 25px;
+    transition: transform .2s; /* Animation */
+}
+
+.homeButton:hover{
+    transform: scale(1.05);
+}
+
+/* INDEX  */
+
+.shoes img{
+    margin-top: 100px;
+    width: 250px;
+    border-radius: 25px;
+}
+
+.shoes h3, p, b{
+    font: normal normal 600 40px/56px Arial;
+    font-size: 2rem;
+    justify-items: center;
+    padding: 10px 0;
+}
+
+.shoes h3{
+    font-size: 3rem;
+}
+
+.shoes{
+    margin-top: -80px;
+    margin-bottom: 100px;
+    display: grid;
+    padding: 10px 0;
+    width: 500px;
+    justify-items: center;
+    justify-self: center;
+    color: #ffffff;
+    background-color: #FF69B4;
+    border-radius: 25px;
+}
+
+
+/* ADD SHOE  */
 
 .placeholder{
     display: grid;
@@ -123,9 +210,12 @@ a{
     border-radius: 20px;
 }
 
-.inputField, input{
+.inputField{
     display: grid;
     justify-self: center;
+}
+
+.inputField, input{
     margin-top: 30px;
     width: 400px;
     font-size: 2rem;
@@ -138,29 +228,22 @@ a{
     margin-top: 50px;
 }
 
-.shoeMakeInfo{
-    overflow-x: auto;
-    display: inline-block;
+
+/* ADMIN  */
+
+.form-cont label, input{
+    font-size: 3rem;
+    margin-top: 100px;
+    display: grid;
+    justify-items: center;
+    justify-self: center;
 }
 
-.shoeID{
-    color: grey;
-    justify-content: start;
-    display: inline;
-}
-
-.shoeDate{
-    color: grey;
-    justify-content: end;
-    display: inline;
-}
-
-.createShoe{
+.form-cont button{
     display: grid;
     justify-items: center;
     justify-self: center;
     margin-top: 120px;
-    margin-bottom: 250px;
     width: 400px;
     height: 80px;
     font: normal normal 800 40px/56px Arial;
@@ -168,5 +251,65 @@ a{
     letter-spacing: 0px;
     color: #ffffff;
     background: #0086FF;
+    border: 0;
     border-radius: 25px;
+    transition: transform .2s; /* Animation */
+}
+
+.form-cont button:hover{
+    transform: scale(1.05);
+}
+
+.updateButton, .deleteButton{
+    width: 250px;
+    height: 40px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 25px;
+    color: #ffffff;
+    font: normal normal 800 40px/56px Arial;
+    font-size: 1rem;
+}
+
+.updateButton{
+    background-color: #FFAB11;
+    transition: transform .2s; /* Animation */
+} 
+
+.updateButton:hover{
+    transform: scale(1.1);
+}
+
+.deleteButton{
+    background-color: red;
+    transition: transform .2s; /* Animation */
+}
+
+.deleteButton:hover{
+    transform: scale(1.1);
+}
+
+
+/* LOG IN  */
+
+.logInButton{
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    margin-top: 120px;
+    width: 400px;
+    height: 80px;
+    font: normal normal 800 40px/56px Arial;
+    font-size: 2rem;
+    letter-spacing: 0px;
+    color: #ffffff;
+    background: #0086FF;
+    border: 0;
+    border-radius: 25px;
+    margin-bottom: 200px;
+    transition: transform .2s; /* Animation */
+}
+
+.logInButton:hover{
+    transform: scale(1.05);
 }
