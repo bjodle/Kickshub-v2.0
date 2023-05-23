@@ -1,4 +1,4 @@
-const Shoe = require("../modules/Shoes")
+const Shoe = require("../../Kickshub-v2.0/modules/Shoes")
 
 module.exports.home_get = async (req,res) => {
     try {
@@ -11,7 +11,7 @@ module.exports.home_get = async (req,res) => {
               '$limit': 10
             }
           ]);
-        res.render("index", {productresult: shoeDB})
+        res.render("index",)
     }
     catch(err){
         console.log(err);
@@ -66,9 +66,9 @@ module.exports.shoe_post = async (req,res) => {
     res.status(201).json({shoe})
 }
 
-// module.exports.delete_post ('/delete/:id', async (req, res) => {
-//     await Post.deleteOne({_id: req.params.id})
-    // return res.redirect('/')
-//   });
+module.exports.delete_post ('/delete/:id', async (req, res) => {
+    await Post.deleteOne({_id: req.params.id})
+    return res.redirect('/')
+  });
 
 
