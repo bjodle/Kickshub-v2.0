@@ -41,7 +41,7 @@ module.exports.login_get = async (req,res) => {
     }
     catch(err){
         console.log(err);
-        res.staus(400)
+        res.status(400)
     }
 
 }
@@ -52,7 +52,7 @@ module.exports.admin_get = async (req,res) => {
     }
     catch(err){
         console.log(err);
-        res.staus(400)
+        res.status(400)
     }
 
 }
@@ -66,9 +66,9 @@ module.exports.shoe_post = async (req,res) => {
     res.status(201).json({shoe})
 }
 
-module.exports.delete_post ('/delete/:id', async (req, res) => {
-    await Post.deleteOne({_id: req.params.id})
-    return res.redirect('/')
-  });
+// module.exports.delete_post ('/delete/:id', async (req, res) => {
+//     await Post.deleteOne({_id: req.params.id})
+//     return res.redirect('/')
+//   });
 
 
